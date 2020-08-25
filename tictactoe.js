@@ -73,7 +73,9 @@ const GameBoard = (function(){
         
         
         if (event.target.className == "cell") {
-            roundCounter++
+            if (event.target.dataset.key != "used") {
+                roundCounter++
+            }
             let key = +event.target.dataset.key
             let playerpiece = Players[PlayerCounter].piece
             cells[key].textContent = playerpiece
